@@ -1,14 +1,14 @@
-# Infrastructure: 
-## Pre-Engagement
-## Network
+# Infrastructure
 
+## Pre-Engagement
+
+## Network
 ### Linux
 - Information-Gathering
 - Vulnerability-Assessment
 - Exploitation
 - Post-Exploitation
 - Lateral-Movement
-
 ### Windows
 - Information-Gathering
 - Vulnerability-Assessment
