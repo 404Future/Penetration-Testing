@@ -1,22 +1,19 @@
-# Infrastructure
+# Infrastructure: Pre-Engagement
+# Infrastructure: Network
 
-## Pre-Engagement
+## Linux
+### *Information-Gathering*
+### *Vulnerability-Assessment*
+### *Exploitation*
+### *Post-Exploitation*
+### *Lateral-Movement*
 
-## Network
-
-### Linux
-#### *Information-Gathering*
-#### *Vulnerability-Assessment*
-#### *Exploitation*
-#### *Post-Exploitation*
-#### *Lateral-Movement*
-
-### Windows
-#### *Information-Gathering*
-#### *Vulnerability-Assessment*
-#### *Exploitation*
-#### *Post-Exploitation*
-#### *Lateral-Movement*
+## Windows
+### *Information-Gathering*
+### *Vulnerability-Assessment*
+### *Exploitation*
+### *Post-Exploitation*
+### *Lateral-Movement*
 
 # Web2
 
