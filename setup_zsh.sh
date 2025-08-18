@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# ─── Check DNS ─────────────────────────────────────────
+echo "[*] Checking DNS connectivity..."
+if ! ping -c 1 8.8.8.8 &>/dev/null; then
+    echo "[!] Network unreachable. Please check your internet connection."
+    exit 1
+fi
+
+if ! ping -c 1 google.com &>/dev/null; then
+    echo "[!] DNS resolution failed. Please check your /etc/resolv.conf or DNS settings."
+    exit 1
+fi
+
 # ─── System Update & Upgrade ─────────────────────────────
 echo "[*] Updating system..."
 sudo apt update && sudo apt -y upgrade
@@ -30,4 +42,3 @@ EOF
 
 echo "[*] Setup complete! Reloading Zsh..."
 exec zsh
-
