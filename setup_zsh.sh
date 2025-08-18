@@ -1,19 +1,23 @@
 #!/bin/bash
 
-# Update + upgrade system
+# ─── System Update & Upgrade ─────────────────────────────
 echo "[*] Updating system..."
 sudo apt update && sudo apt -y upgrade
 
-# Ensure zsh is installed
-echo "[*] Installing zsh if not present..."
-sudo apt install -y zsh
+# ─── Install Zsh ───────────────────────────────────────
+echo "[*] Installing Zsh if not present..."
+sudo apt install -y zsh git curl
 
-# Configure ~/.zshrc with custom prompt
+# ─── Install Flameshot ─────────────────────────────────
+echo "[*] Installing Flameshot..."
+sudo apt install -y flameshot
+
+# ─── Configure Zsh Prompt ──────────────────────────────
 echo "[*] Configuring Zsh prompt..."
 cat << 'EOF' >> ~/.zshrc
 
 # ─── Custom Hacker Prompt ────────────────────────────────
-if [[ \$EUID -eq 0 ]]; then
+if [[ $EUID -eq 0 ]]; then
     # Root prompt (all red, dir in yellow for contrast)
     PROMPT=$'%F{red}┌──(%n㉿%m)-[%F{yellow}%~%F{red}]\n└─[%D{%Y-%m-%d %H:%M:%S}] %# %f'
 else
@@ -24,5 +28,6 @@ fi
 
 EOF
 
-echo "[*] Done! Reloading zsh..."
+echo "[*] Setup complete! Reloading Zsh..."
 exec zsh
+
