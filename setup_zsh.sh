@@ -27,8 +27,7 @@ fi
 # --- Section 2: System Update & Packages ---
 
 echo "==> Updating system packages..."
-sudo apt update && sudo apt upgrade -y
-sudo apt autoremove -y
+sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
 
 echo "==> Installing flameshot..."
 sudo apt install -y flameshot git
