@@ -32,18 +32,7 @@ sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo
 echo "==> Installing flameshot..."
 sudo apt install -y flameshot git
 
-# --- Section 3: Clone PEASS-ng repository ---
-
-PEASS_DIR="$HOME/PEASS-ng"
-if [ -d "$PEASS_DIR" ]; then
-    echo "PEASS-ng directory already exists at $PEASS_DIR. Pulling latest changes..."
-    git -C "$PEASS_DIR" pull
-else
-    echo "Cloning PEASS-ng repository..."
-    git clone https://github.com/peass-ng/PEASS-ng.git "$PEASS_DIR"
-fi
-
-# --- Section 4: Zsh Prompt Setup ---
+# --- Section 3: Zsh Prompt Setup ---
 
 ZSHRC="$HOME/.zshrc"
 BACKUP="$HOME/.zshrc.bak_$(date +%Y%m%d_%H%M%S)"
@@ -53,7 +42,7 @@ cp "$ZSHRC" "$BACKUP" 2>/dev/null
 echo "==> Applying custom Zsh prompt..."
 cat << 'EOF' >> "$ZSHRC"
 
-# --- Custom Hacker Prompt ---
+# --- Custom Prompt ---
 autoload -U colors && colors
 setopt PROMPT_SUBST
 
